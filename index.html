@@ -1,0 +1,81 @@
+<nav id="navbar">
+            <header>Tweepy Documentation</header>
+            <a class="nav-link" href="#Installation">Installation</a>
+            <a class="nav-link" href="#Getting_Started">Getting Started</a>
+            <a class="nav-link" href="#Introduction">Introduction</a>
+            <a class="nav-link" href="#Hello_Tweepy">Hello Tweepy</a>
+            <a class="nav-link" href="#API">API</a>
+            <a class="nav-link" href="#Models">Models</a>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Installation">
+                <header>Installation</header>
+                <p>The easiest way to install the latest version from PyPI is by using pip:</p>
+                <div class="code-block">
+                    <code>pip install tweepy</code>
+                </div>
+                <p>You can also use Git to clone the repository from GitHub to install the latest development version:</p>
+                <div class="code-block">
+                    <code>
+                        git clone https://github.com/tweepy/tweepy.git<br>
+                        cd tweepy<br>
+                        pip install .
+                    </code>
+                </div>
+            </section>
+            <section class="main-section" id="Getting_Started">
+                <header>Getting Started</header>
+                <p>If you are new to Tweepy, this is the place to begin. The goal of this tutorial is to get you set-up and rolling with Tweepy. We won’t go into too much detail here, just some important basics.</p>
+            </section>
+            <section class="main-section" id="Introduction">
+                <header>Introduction</header>
+                <p>Here are some things you should take note of when using Tweepy:</p>
+                <ul>
+                    <li>You will need a basic understanding of Python and Python methods.</li>
+                    <li>Tweepy is very cool and efficient.</li>
+                    <li>Tweepy is an effective wrapper for the Twitter API.</li>
+                    <li>You can build Twitter bots using Tweepy.</li>
+                    <li>Please don't use Tweepy for anything sketchy.</li>
+                </ul>
+                <p>With that, let's get started with Tweepy!</p>
+            </section>
+            <section class="main-section" id="Hello_Tweepy">
+                <header>Hello Tweepy</header>
+                <div class="code-block">
+                    <code>
+                        import tweepy<br><br>
+                        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)<br>
+                        auth.set_access_token(access_token, access_token_secret)<br><br>
+                        api = tweepy.API(auth)<br><br>
+                        public_tweets = api.home_timeline()<br>
+                        for tweet in public_tweets:<br>
+                        print(tweet.text)
+                    </code>
+                </div>
+                <p>This example will download your home timeline tweets and print each one of their texts to the console. Twitter requires all requests to use OAuth for authentication. The Authentication Tutorial goes into more details about authentication.</p>
+            </section>
+            <section class="main-section" id="API">
+                <header>API</header>
+                <p>The API class provides access to the entire twitter RESTful API methods. Each method can accept various parameters and return responses. For more information about these methods please refer to API Reference.</p>
+            </section>
+            <section class="main-section" id="Models">
+                <header>Models</header>
+                <p>When we invoke an API method most of the time returned back to us will be a Tweepy model class instance. This will contain the data returned from Twitter which we can then use inside our application. For example the following code returns to us a User model:</p>
+                <div class="code-block">
+                    <code>
+                        # Get the User object for twitter...<br>
+                        user = api.get_user('twitter')
+                    </code>
+                </div>
+                <p>Models contain the data and some helper methods which we can then use:</p>
+                <div class="code-block">
+                    <code>
+                        print(user.screen_name)<br>
+                        print(user.followers_count)<br>
+                        for friend in user.friends():<br>
+                        print(friend.screen_name)
+                    </code>
+                </div>
+                <p>For more information about models please see ModelsReference.</p>
+            </section>
+        </main>

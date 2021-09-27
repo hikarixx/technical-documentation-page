@@ -1,0 +1,45 @@
+@media (min-width: 1025px) {
+                nav {
+                    position: fixed;
+                    height: 100%;
+                    width: 15%;
+                    margin-left: 70px;
+
+                }
+                main {
+                    float: right;
+                    width: 70%;
+                    margin-right: 90px;
+                }
+            }
+            
+            .nav-link {
+                display: block;
+                background-color: #bbb;
+                color:black;
+                padding: 1px 4px;
+                text-decoration: none;
+            }
+
+            .nav-link:hover {
+                background-color: #ddd;
+                color: rgb(41, 41, 134);
+            }
+
+            section {
+                margin: 40px 0px;
+            }
+
+            header {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            
+            .code-block {
+                background-color: #eee;
+                margin-left: 15px;
+                padding: 5px;
+                width: 470px;
+                border-left: 3px solid rgb(41, 41, 134);
+            }
